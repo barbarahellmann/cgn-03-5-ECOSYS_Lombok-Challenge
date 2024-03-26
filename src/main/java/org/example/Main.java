@@ -22,11 +22,19 @@ public class Main {
         Student student3 = new Student(4455, "Silvia", "Götttingen", 1);
 
 
-        Teacher teacher1 = new Teacher(1, "Dominic", "Java Sandbox");
-        Teacher teacher2 = new Teacher(2, "Florian", "OOP");
-        Teacher teacher3 = new Teacher(3, "Raffael", "Java Ecosystem");
+        Teacher teacher1 = new Teacher(1, "Dominic", "Java");
+        Teacher teacher2 = new Teacher(2, "Florian", "Development");
+        Teacher teacher3 = new Teacher(3, "Raffael", "Programming");
 
 
-        Course course = new Course(12, "Java Bootcamp", teacher1, List.of(student1, student2));
+        Course course1 = new Course(12, "Java Sandbox", teacher1.name(), List.of(student1, student2).toString());
+        Course course2 = new Course(12, "Java OOP", teacher2.name(), List.of(student1, student2).toString());
+        Course course3 = new Course(12, "Java Ecosystem", teacher3.name(), List.of(student1, student2).toString());
+
+        System.out.println("Kursliste: ");
+        System.out.println("Im Kurs " + course1.name + " von " + teacher1.name() + " sind folgende Teilnehmer: " +
+                course1.students);
+//        System.out.println("Kurs 2 = "+ course2.toString());
+//        System.out.println("Kurs 3 = "+ course3.toString());
     }
 }
