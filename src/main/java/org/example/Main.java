@@ -27,14 +27,15 @@ public class Main {
         Teacher teacher3 = new Teacher(3, "Raffael", "Programming");
 
 
-        Course course1 = new Course(12, "Java Sandbox", teacher1.name(), List.of(student1, student2).toString());
-        Course course2 = new Course(12, "Java OOP", teacher2.name(), List.of(student1, student2).toString());
-        Course course3 = new Course(12, "Java Ecosystem", teacher3.name(), List.of(student1, student2).toString());
+        Course course1 = new Course(10, "Java Sandbox", teacher1.name(), List.of(student1, student2).toString());
+        Course course2 = new Course(11, "Java OOP", teacher2.name(), List.of(student2, student3).toString());
+        Course course3 = new Course(12, "Java Ecosystem", teacher3.name(), List.of(student1, student2, student3).toString());
 
-        System.out.println("Kursliste: ");
+
+
+        System.out.println("Kursübersicht: ");
         System.out.println("Im Kurs " + course1.name + " von " + teacher1.name() + " sind folgende Teilnehmer: " +
-                course1.students);
-//        System.out.println("Kurs 2 = "+ course2.toString());
-//        System.out.println("Kurs 3 = "+ course3.toString());
+                course1.students.toString());
+
     }
 }
