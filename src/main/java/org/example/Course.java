@@ -3,16 +3,19 @@ package org.example;
 
 import lombok.*;
 
+import javax.xml.namespace.QName;
+import java.util.List;
+
 @Data // Generates getter, setter, ...
-@NoArgsConstructor // Generates a no-args constructor
 @AllArgsConstructor // Generates an all-args constructor
 @Builder
-@With
 
 public class Course {
     int id;
-    String name;
+    @With
+    private String name;
+    // String name;
     String teacher;
-    String students;
+    List<Student> students;
 
 }

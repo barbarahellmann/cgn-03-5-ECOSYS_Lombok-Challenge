@@ -21,14 +21,13 @@ public class Main {
 
         // Student student1 = new Student(2233, "Paul", "Cologne", 1);
         Student student2 = new Student(3344, "Chrissy", "Heidelberg", 1);
-        Student student3 = new Student(4455, "Silvia", "Götttingen", 1);
+        Student student3 = new Student(4455, "Silvia", "Göttingen", 1);
 
 
         Student student1 = Student.builder()
                 .id(2233)
                 .name("Paul")
                 .address("Cologne")
-                .grade(1)
                 .build();
 
         // Teacher teacher1 = new Teacher(1, "Dominic", "Java");
@@ -43,30 +42,28 @@ public class Main {
 
 
         // Course course1 = new Course(10, "Java Sandbox", teacher1.name(), List.of(student1, student2).toString());
-        Course course2 = new Course(11, "Java OOP", teacher2.name(), List.of(student2, student3).toString());
-        Course course3 = new Course(12, "Java Ecosystem", teacher3.name(), List.of(student1, student2, student3).toString());
+        Course course2 = new Course(11, "Java OOP", teacher2.name(), List.of(student2, student3));
+        Course course3 = new Course(12, "Java Ecosystem", teacher3.name(), List.of(student1, student2, student3));
 
         Course course1 = Course.builder()
                 .id(10)
                 .name("Java Sandbox")
                 .teacher(teacher1.name())
-                .students(List.of(student1, student2).toString())
+                .students(List.of(student1))
                 .build();
 
 
         System.out.println("Kursübersicht: ");
-        System.out.println("\nIm Kurs " + course1.name + " von " + teacher1.name() + " sind folgende Teilnehmer: \n" +
-                course1.students.toString());
-        System.out.println("\nIm Kurs " + course2.name + " von " + teacher2.name() + " sind folgende Teilnehmer: \n" +
+        System.out.println("\nIm Kurs " + course1.getName() + " von " + teacher1.name() + " sind folgende Teilnehmer: \n" +
+                course1.students);
+        System.out.println("\nIm Kurs " + course2.getName() + " von " + teacher2.name() + " sind folgende Teilnehmer: \n" +
                 course2.students.toString());
-        System.out.println("\nIm Kurs " + course3.name + " von " + teacher3.name() + " sind folgende Teilnehmer: \n" +
+        System.out.println("\nIm Kurs " + course3.getName() + " von " + teacher3.name() + " sind folgende Teilnehmer: \n" +
                 course3.students.toString());
 
 
-        Course newnamecourse1 = course1.withName("Java for Dummies");
-        System.out.println("\nIm Kurs " + course1.name + " von " + teacher1.name() + " sind folgende Teilnehmer: " +
+        Course copyCourse1 = course1.withName("Java for Dummies");
+        System.out.println("\nIm Kurs " + copyCourse1.getName() + " von " + teacher1.name() + " sind folgende Teilnehmer: " +
                 course1.students.toString());
-
-
     }
 }
