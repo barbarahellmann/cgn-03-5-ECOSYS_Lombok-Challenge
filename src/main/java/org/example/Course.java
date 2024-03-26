@@ -1,16 +1,13 @@
 package org.example;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Builder;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data // Generates getter, setter, ...
 @NoArgsConstructor // Generates a no-args constructor
 @AllArgsConstructor // Generates an all-args constructor
-
+@Builder
+@With
 
 public class Course {
     int id;
